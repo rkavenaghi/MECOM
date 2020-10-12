@@ -1,0 +1,323 @@
+{
+    "id": 140398004366784,
+    "scene": false,
+    "width": 64000,
+    "height": 64000,
+    "nodes": [
+        {
+            "id": 139764213484512,
+            "class": "Node_stl",
+            "module": "STL1",
+            "x_pos": 1220.6718749999995,
+            "y_pos": -243.30078124999997,
+            "title": "STL",
+            "inputs": [
+                {
+                    "id": 139881318324400,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139881318324544,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139881318324592,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139881318324640,
+                    "position": "input",
+                    "color": "string"
+                },
+                {
+                    "id": 139881318324688,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139881318324736,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139881318324784,
+                    "position": "input",
+                    "color": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139881318324832,
+                    "position": "output",
+                    "color": "float"
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "100"
+                },
+                {
+                    "index": 1,
+                    "valor": "0"
+                },
+                {
+                    "index": 2,
+                    "valor": "0"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139764213485520,
+            "class": "Node_string",
+            "module": "Diret\u00f3rio1",
+            "x_pos": 359.62499999999994,
+            "y_pos": 9.312499999999993,
+            "title": "Diret\u00f3rio",
+            "inputs": [],
+            "outputs": [
+                {
+                    "id": 139881318325024,
+                    "position": "output",
+                    "color": "str"
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "Cilindro2.stl"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139763405522832,
+            "class": "Node_data",
+            "module": "Dados1",
+            "x_pos": -557.2499999999999,
+            "y_pos": -97.24999999999997,
+            "title": "Bloco dados",
+            "inputs": [
+                {
+                    "id": 139881318325216,
+                    "position": "input",
+                    "color": "str"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139881318325264,
+                    "position": "output",
+                    "color": "float"
+                }
+            ],
+            "sender": "Carregar Arquivo",
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "test.txt"
+                },
+                {
+                    "index": 1,
+                    "valor": "(6, 1013)"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139763405523072,
+            "class": "Node_string",
+            "module": "Diret\u00f3rio2",
+            "x_pos": -819.9999999999999,
+            "y_pos": -159.99999999999997,
+            "title": "Diret\u00f3rio",
+            "inputs": [],
+            "outputs": [
+                {
+                    "id": 139881318325456,
+                    "position": "output",
+                    "color": "str"
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "test.txt"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139763405524560,
+            "class": "Node_matrix",
+            "module": "Matriz1",
+            "x_pos": -159.5,
+            "y_pos": -197.49999999999994,
+            "title": "Tensor O2",
+            "inputs": [
+                {
+                    "id": 139880978411584,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139880978411632,
+                    "position": "input",
+                    "color": "int"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139880978411680,
+                    "position": "output",
+                    "color": "float"
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "1"
+                }
+            ],
+            "kwargs": {
+                "MODE": 1
+            },
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139880978441888,
+            "class": "Node_matrix",
+            "module": "Matriz3",
+            "x_pos": -164.06250000000003,
+            "y_pos": 566.0156249999999,
+            "title": "Tensor O2",
+            "inputs": [
+                {
+                    "id": 139880978441936,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139880978441984,
+                    "position": "input",
+                    "color": "int"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139880978442032,
+                    "position": "output",
+                    "color": "float"
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "3"
+                }
+            ],
+            "kwargs": {
+                "MODE": 1
+            },
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139880978442128,
+            "class": "Node_matrix",
+            "module": "Matriz4",
+            "x_pos": -167.1875,
+            "y_pos": 179.68749999999997,
+            "title": "Tensor O2",
+            "inputs": [
+                {
+                    "id": 139880978442176,
+                    "position": "input",
+                    "color": "float"
+                },
+                {
+                    "id": 139880978442224,
+                    "position": "input",
+                    "color": "int"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139880978442272,
+                    "position": "output",
+                    "color": "float"
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "2"
+                }
+            ],
+            "kwargs": {
+                "MODE": 1
+            },
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        }
+    ],
+    "edges": [
+        {
+            "id": 139881318261616,
+            "StartSocket": 139881318325024,
+            "EndSocket": 139881318324640,
+            "edge_type": 2
+        },
+        {
+            "id": 139881318261744,
+            "StartSocket": 139881318325456,
+            "EndSocket": 139881318325216,
+            "edge_type": 2
+        },
+        {
+            "id": 139881318264400,
+            "StartSocket": 139881318325264,
+            "EndSocket": 139880978411584,
+            "edge_type": 2
+        },
+        {
+            "id": 139881318262704,
+            "StartSocket": 139881318325264,
+            "EndSocket": 139880978442176,
+            "edge_type": 2
+        },
+        {
+            "id": 139881318264336,
+            "StartSocket": 139881318325264,
+            "EndSocket": 139880978441936,
+            "edge_type": 2
+        }
+    ],
+    "lembretes": []
+}

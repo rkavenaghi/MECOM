@@ -1,0 +1,37 @@
+{
+    "id": 140398004366784,
+    "scene": false,
+    "width": 64000,
+    "height": 64000,
+    "nodes": [
+        {
+            "id": 140398004401296,
+            "class": "Node_algebra",
+            "module": "Escalar1",
+            "x_pos": -125.0,
+            "y_pos": -80.0,
+            "title": "Escalar",
+            "inputs": [],
+            "outputs": [
+                {
+                    "id": 140310224329216,
+                    "position": "output",
+                    "color": "float"
+                }
+            ],
+            "sender": "Escalar",
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "10"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        }
+    ],
+    "edges": [],
+    "lembretes": []
+}

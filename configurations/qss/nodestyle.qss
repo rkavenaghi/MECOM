@@ -1,0 +1,36 @@
+
+QWidget {background: #212121}
+
+QMainWindow QWidget {background: #515151; color: #d0d0d0}
+QMdiArea QWidget {background: #111111}
+QMdiArea QFrame {background: #111111}
+
+
+QDockWidget {background: #414141}
+QDockWidget QWidget {background: #414141}
+
+
+QTreeWidget {background: #616161; color:#272727}
+
+
+QPlainTextEdit {background: #303030; color:#272727}
+
+
+QRadioButton {background: #E3212121; color: #a0a0a0; font-weight: normal}
+QRadioButton:hover {background: #E3414141; color: #c0c0c0; font-weight: bold}
+QComboBox {background: #E3616161; color: #272727; font-weight: bold;}
+QComboBox QWidget {background: #E3616161; color: #272727; font-weight: normal;}
+
+QLineEdit {background: #303030; color: #f04040}
+QTextEdit {background: #303030; color: #f04040}
+QLineEdit:hover {background: #a0a0a0;}
+QLabel {background: #E3212121; color:#a0a0a0}
+QCheckBox {background: #E3212121; color:#a0a0a0}
+QPushButton {background: #404040; color: #202020}
+QPushButton:hover {background: #606060; color: #202020}
+
+
+QDialog {background: #515151}
+QDialog QWidget {background: #515151; color:#272727; font-weight: normal}
+QDialog QPlainTextEdit {font-weight: bold}
+

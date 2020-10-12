@@ -1,0 +1,93 @@
+{
+    "id": 140548585817232,
+    "scene": false,
+    "width": 64000,
+    "height": 64000,
+    "nodes": [
+        {
+            "id": 140548585848016,
+            "class": "Node_algebra",
+            "module": "Escalar1",
+            "x_pos": -166.0,
+            "y_pos": -96.0,
+            "title": "Escalar",
+            "inputs": [],
+            "outputs": [
+                {
+                    "id": 140548585880928,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                }
+            ],
+            "sender": "Escalar",
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "1"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 140548585898528,
+            "class": "Node_complex",
+            "module": "Complexo1",
+            "x_pos": 89.0,
+            "y_pos": -122.0,
+            "title": "Complexo",
+            "inputs": [
+                {
+                    "id": 140548585898672,
+                    "position": "input",
+                    "color": "complex",
+                    "status": true
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 140548585898720,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 140548585898768,
+                    "position": "output",
+                    "color": "float",
+                    "status": false
+                },
+                {
+                    "id": 140548585898816,
+                    "position": "output",
+                    "color": "float",
+                    "status": false
+                },
+                {
+                    "id": 140548585898864,
+                    "position": "output",
+                    "color": "float",
+                    "status": false
+                }
+            ],
+            "sender": null,
+            "entrys": [],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        }
+    ],
+    "edges": [
+        {
+            "id": 140548585885904,
+            "StartSocket": 140548585880928,
+            "EndSocket": 140548585898672,
+            "edge_type": 2
+        }
+    ],
+    "lembretes": []
+}
