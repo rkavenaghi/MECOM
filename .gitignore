@@ -16,6 +16,7 @@ my-log.log
 /toolboxes/sysid/__pycache__/
 /toolboxes/__pycache__/
 /__pycache__/
+/TEST_SCRIPTS/
 /toolboxes/solid_mechanics/__pycache__/
 /nodes/algebra_nodes/__pycache__/
 /toolboxes/structural_dynamics/__pycache__/

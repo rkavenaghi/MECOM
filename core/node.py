@@ -10,6 +10,7 @@ from PyQt5.Qt import *
 import utils
 import logging
 
+
 class Node:
     """
     Classe base para a criação de todas os nós. 
@@ -191,6 +192,11 @@ class Node:
 
         return data
 
+    def renameNode(self):
+        # TODO implementar lógica para renomear aqui
+        print('Renomear nó aqui')
+        #self.grNode.title_item.setPlainText('Oi')
+
     def invalidSignal(self):
         for output in self.outputs:
             if output.hasEdge():
@@ -288,7 +294,7 @@ class QDMGraphicsNode(QGraphicsItem):
     def initContent(self):
 
         self.grContent = QGraphicsProxyWidget(self)
-        self.content.setGeometry(self.edge_size,self.title_height + self.edge_size,
+        self.content.setGeometry(self.edge_size, self.title_height + self.edge_size,
                                  self.width - 2*self.edge_size, self.height - 2*self.edge_size - self.title_height)
         self.grContent.setWidget(self.content)
 
@@ -317,14 +323,17 @@ class QDMGraphicsNode(QGraphicsItem):
         self.title_item.setTextWidth(self.width)
 
 
-    
+
     @property
     def title(self): return self._title
 
     @title.setter
     def title(self, value):
         self._title = value
+
+        # Função para renomear o título do Nó
         self.title_item.setPlainText(self._title)
+
 
     def paint(self, painter, QStyleOptionGraphicsItem, widget= None):
         # TODO adicionar Etiquetas ao codigo
@@ -340,13 +349,13 @@ class QDMGraphicsNode(QGraphicsItem):
         path_title.setFillRule(Qt.WindingFill)
         path_title.addRoundedRect(0, 0, self.width, self.title_height, self.edge_size, self.edge_size)
         path_title.addRect(0, self.title_height - self.edge_size, self.edge_size, self.edge_size)
-        path_title.addRect(self.width - self.edge_size, self.title_height - self.edge_size,self.edge_size,self.edge_size)
+        path_title.addRect(self.width - self.edge_size, self.title_height - self.edge_size, self.edge_size, self.edge_size)
         painter.setPen(Qt.NoPen)
         painter.setBrush(self._brush_title)
         painter.drawPath(path_title.simplified())
 
         self.hint_node = QPainterPath()
-        self.hint_node.addEllipse(self.width -4*self.edge_size, (self.title_height -15)/2 , 15, 15)
+        self.hint_node.addEllipse(self.width -4*self.edge_size, (self.title_height - 15) / 2, 15, 15)
 
         painter.setBrush(QBrush(QColor('#575A61')))
         painter.setPen(Qt.NoPen)
@@ -357,8 +366,6 @@ class QDMGraphicsNode(QGraphicsItem):
         painter.setBrush(QBrush(QColor('#000000')))
         painter.setPen(Qt.NoPen)
         painter.drawPath(hint_text.simplified())
-
-
 
         self.exit_button = QPainterPath()
         self.exit_button.addEllipse(self.width - 2 * self.edge_size, (self.title_height - 15) / 2, 15, 15)
@@ -381,7 +388,7 @@ class QDMGraphicsNode(QGraphicsItem):
                                     self.height - self.title_height,
                                     self.edge_size, self.edge_size)
 
-        path_content.addRect(0, self.title_height, self.edge_size,self.edge_size)
+        path_content.addRect(0, self.title_height, self.edge_size, self.edge_size)
         path_content.addRect(self.width - self.edge_size, self.title_height, self.edge_size, self.edge_size)
 
         painter.setPen(Qt.NoPen)
@@ -413,7 +420,7 @@ class QDMGraphicsNode(QGraphicsItem):
             #    self.node.scene.history.sceneStateChange()
 
     def mousePressEvent(self, event):
-
+        print('Evento em Node')
         if event.button() == Qt.LeftButton:
             position = event.pos()
             x_rel = position.x()/self.width
@@ -421,17 +428,24 @@ class QDMGraphicsNode(QGraphicsItem):
 
             rectangle = self.hint_node.boundingRect()
             rectangle_close = self.exit_button.boundingRect()
-            if (rectangle.x() <= position.x() <= rectangle.x()+rectangle.width() and
-                rectangle.y() <= position.y() <= rectangle.y()+rectangle.height()):
+
+            if position in rectangle:
                 print('cliquei em hint, abrir tela com dicas de como usar a funcao')
                 self.node.tips()
                 return
 
-            if (rectangle_close.x() <= position.x() <= rectangle_close.x()+rectangle_close.width() and
-                rectangle_close.y() <= position.y() <= rectangle_close.y()+rectangle_close.height()):
+            if position in rectangle_close:
                 logging.info('Deletar Nó')
                 self.node.removeNode()
                 return
+
+            # TODO avaliar a logica adequamento. Há algum evento capturando o sinal antes desse.
+            if position in self.title_item.boundingRect():
+                logging.info('Renomear Nó:: Abrir diálogo ')
+                self.node.renameNode()
+
+
             logging.info(f'Cliquei em x_rel={x_rel} y_rel={y_rel}')
-        super().mousePressEvent(event)
+        else:
+            super().mousePressEvent(event)
 

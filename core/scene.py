@@ -112,6 +112,8 @@ class QDMGraphicsView(QGraphicsView):
 
 
     def mousePressEvent(self, event):
+        print('Evento em scene')
+
         if event.button() == Qt.MiddleButton:
             self.middleMouseButtonPress(event)
         elif event.button() == Qt.LeftButton:
@@ -250,7 +252,7 @@ class QDMGraphicsView(QGraphicsView):
         self.last_item_clicked = item
         self.item_selected = item
         pos = event.pos()
-        logging.info(f'Cliquei em {pos}')
+        logging.info(f'Cliquei em {pos} item: {item}')
 
         if isinstance(item, QDMGraphicsSocket):  # Cliquei em um socket, comecar a desenhar a edge
             if item.socket.status:
@@ -270,8 +272,8 @@ class QDMGraphicsView(QGraphicsView):
                 super().mouseReleaseEvent(fakeEvent)
                 QApplication.setOverrideCursor(Qt.CrossCursor)
                 return
-
         super().mousePressEvent(event)
+
 
     def rightMouseButtonRelease(self, event):
         super().mouseReleaseEvent(event)
@@ -282,7 +284,6 @@ class QDMGraphicsView(QGraphicsView):
             logging.info(f'Socket status: {item.socket.status}')
             item.socket.changeStatus()
 
-        super().mousePressEvent(event)
 
     def wheelEvent(self, event):
         zoomOutFactor = 1 / self.zoomInFactor

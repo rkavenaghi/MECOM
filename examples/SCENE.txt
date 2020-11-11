@@ -1,20 +1,68 @@
 {
-    "id": 140548585817232,
+    "id": 140673131551856,
     "scene": false,
     "width": 64000,
     "height": 64000,
     "nodes": [
         {
-            "id": 140548585848016,
+            "id": 140673131581504,
+            "class": "Node_complex",
+            "module": "Complexo1",
+            "x_pos": 61.0,
+            "y_pos": -197.0,
+            "title": "Complexo",
+            "inputs": [
+                {
+                    "id": 140673131610320,
+                    "position": "input",
+                    "color": "complex",
+                    "status": true
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 140673131610368,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 140673131610416,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 140673131610464,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 140673131610512,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                }
+            ],
+            "sender": null,
+            "entrys": [],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 140673131612432,
             "class": "Node_algebra",
             "module": "Escalar1",
-            "x_pos": -166.0,
-            "y_pos": -96.0,
+            "x_pos": -254.0,
+            "y_pos": -42.0,
             "title": "Escalar",
             "inputs": [],
             "outputs": [
                 {
-                    "id": 140548585880928,
+                    "id": 140673131612576,
                     "position": "output",
                     "color": "float",
                     "status": true
@@ -31,61 +79,13 @@
             "args": [],
             "checkboxes": [],
             "plainText": []
-        },
-        {
-            "id": 140548585898528,
-            "class": "Node_complex",
-            "module": "Complexo1",
-            "x_pos": 89.0,
-            "y_pos": -122.0,
-            "title": "Complexo",
-            "inputs": [
-                {
-                    "id": 140548585898672,
-                    "position": "input",
-                    "color": "complex",
-                    "status": true
-                }
-            ],
-            "outputs": [
-                {
-                    "id": 140548585898720,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 140548585898768,
-                    "position": "output",
-                    "color": "float",
-                    "status": false
-                },
-                {
-                    "id": 140548585898816,
-                    "position": "output",
-                    "color": "float",
-                    "status": false
-                },
-                {
-                    "id": 140548585898864,
-                    "position": "output",
-                    "color": "float",
-                    "status": false
-                }
-            ],
-            "sender": null,
-            "entrys": [],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
         }
     ],
     "edges": [
         {
-            "id": 140548585885904,
-            "StartSocket": 140548585880928,
-            "EndSocket": 140548585898672,
+            "id": 140673131598256,
+            "StartSocket": 140673131612576,
+            "EndSocket": 140673131610320,
             "edge_type": 2
         }
     ],

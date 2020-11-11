@@ -95,12 +95,13 @@ class ComputationalMecEng(QMainWindow):
                       'Visualização': lambda: Node_graphics(self.current_project.scene, parent=self),
                       'Randômico': lambda: Node_random(self.current_project.scene, 'Random', parent=self),
                       'Data IO': self.load_filedata,
-                      'Mecanismos': self.load_mecanismos,
-                      'Identificação de Sistemas' : self.load_sysid,
-                      'Mecânica dos Sólidos': self.load_solid_mechanics,
-                      'Materiais': lambda: Node_material(self.current_project.scene, parent=self),
+                      #'Mecanismos': self.load_mecanismos,
+                      #'Identificação de Sistemas' : self.load_sysid,
+                      #'Mecânica dos Sólidos': self.load_solid_mechanics,
+                      #'Materiais': lambda: Node_material(self.current_project.scene, parent=self),
                       'Iterador': lambda: Node_iterador(self.current_project.scene, parent=self),
-                      'Função': lambda: Node_function(self.current_project.scene, parent=self)}
+                      'Função': lambda: Node_function(self.current_project.scene, parent=self),
+                      'Server': lambda: Node_server(self.current_project.scene, parent=self)}
 
 
         self.modules = self.nodes.keys()

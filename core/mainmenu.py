@@ -100,6 +100,7 @@ def initMenu(application):
 
     colaboration(application)
     sceneMenu(application)
+    simulate(application)
 
     return application.mainMenu
 
@@ -119,4 +120,7 @@ def chatWidget(application):
     application.chatWidget.setMinimumWidth(300)
     application.addDockWidget(QtCore.Qt.RightDockWidgetArea, application.chatWidget)
 
+def simulate(application):
+    simulate_menu = application.mainMenu.addMenu('Simulação')
+    update_nodes = simulate_menu.addAction('Atualizar')
 

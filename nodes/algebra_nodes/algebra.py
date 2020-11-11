@@ -72,7 +72,7 @@ class Node_algebra(Node):
             self.grNode = QDMGraphicsNode(self)
             self.grNode.resize(140, 98)
             inputs = []
-            outputs = [{'pos': 0.45, 'type': 'float', 'label': 'Escalar'}]
+            outputs = [{'pos': 0.8, 'type': 'float', 'label': 'Escalar'}]
             prosseguir = True
 
         else:
@@ -277,7 +277,7 @@ class QDMNodeScalar(QWidget):
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(self.layout)
         self.entry = QLineEdit('Digite')
-        self.output_label = QLabel('OUT1: ')
+        self.output_label = QLabel(' ')
 
 
         self.entry.textChanged.connect(self.node.updateNode)
@@ -300,9 +300,9 @@ class QDMNodeScalar(QWidget):
 
         readdata = self.outputSignal(value)
         try:
-            self.output_label.setText('OUT1: ' + f'{readdata:.3e}')
+            self.output_label.setText(f'{readdata:.3e}')
         except ValueError:
-            self.output_label.setText('OUT1: ' + f'---')
+            self.output_label.setText(f'---')
 
         if (self.node.outputs[0].hasEdge()):
             self.node.sendSignal([readdata], self.node.outputs, [self], ['float'])
