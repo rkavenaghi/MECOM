@@ -1,45 +1,33 @@
 {
-    "id": 140673131551856,
+    "id": 139714481065648,
     "scene": false,
     "width": 64000,
     "height": 64000,
     "nodes": [
         {
-            "id": 140673131581504,
-            "class": "Node_complex",
-            "module": "Complexo1",
-            "x_pos": 61.0,
-            "y_pos": -197.0,
-            "title": "Complexo",
+            "id": 139714481104256,
+            "class": "Node_somatorio",
+            "module": "Soma1",
+            "x_pos": 20.0,
+            "y_pos": -12.0,
+            "title": "Soma",
             "inputs": [
                 {
-                    "id": 140673131610320,
+                    "id": 139881258842624,
                     "position": "input",
-                    "color": "complex",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881258842672,
+                    "position": "input",
+                    "color": "float",
                     "status": true
                 }
             ],
             "outputs": [
                 {
-                    "id": 140673131610368,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 140673131610416,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 140673131610464,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 140673131610512,
+                    "id": 139881258842720,
                     "position": "output",
                     "color": "float",
                     "status": true
@@ -53,16 +41,16 @@
             "plainText": []
         },
         {
-            "id": 140673131612432,
+            "id": 139714481125408,
             "class": "Node_algebra",
             "module": "Escalar1",
-            "x_pos": -254.0,
-            "y_pos": -42.0,
+            "x_pos": -224.0,
+            "y_pos": -97.0,
             "title": "Escalar",
             "inputs": [],
             "outputs": [
                 {
-                    "id": 140673131612576,
+                    "id": 139881258842912,
                     "position": "output",
                     "color": "float",
                     "status": true
@@ -72,7 +60,225 @@
             "entrys": [
                 {
                     "index": 0,
+                    "valor": "2"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139714481152208,
+            "class": "Node_algebra",
+            "module": "Escalar2",
+            "x_pos": -232.0,
+            "y_pos": 31.0,
+            "title": "Escalar",
+            "inputs": [],
+            "outputs": [
+                {
+                    "id": 139881258843104,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                }
+            ],
+            "sender": "Escalar",
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "3"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139714481152256,
+            "class": "Node_array",
+            "module": "Vetor1",
+            "x_pos": 164.28125000000028,
+            "y_pos": 201.73437499999991,
+            "title": "Vetor 1D",
+            "inputs": [
+                {
+                    "id": 139881258843296,
+                    "position": "input",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881258842960,
+                    "position": "input",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881258843344,
+                    "position": "input",
+                    "color": "int",
+                    "status": true
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139881258843440,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881258843488,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "5.000"
+                },
+                {
+                    "index": 1,
                     "valor": "1"
+                },
+                {
+                    "index": 2,
+                    "valor": "10"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 140012890242880,
+            "class": "Node_algebra",
+            "module": "Escalar3",
+            "x_pos": -227.0,
+            "y_pos": 160.0,
+            "title": "Escalar",
+            "inputs": [],
+            "outputs": [
+                {
+                    "id": 139881258843680,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                }
+            ],
+            "sender": "Escalar",
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "0"
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139881258915776,
+            "class": "Node_graphics",
+            "module": "Gr\u00e1fico1",
+            "x_pos": 621.5781250000001,
+            "y_pos": -130.015625,
+            "title": "Visualiza\u00e7\u00e3o 2D",
+            "inputs": [
+                {
+                    "id": 139881247053136,
+                    "position": "input",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881247052896,
+                    "position": "input",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881247053232,
+                    "position": "input",
+                    "color": "str",
+                    "status": true
+                }
+            ],
+            "outputs": [],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": ""
+                }
+            ],
+            "kwargs": {},
+            "args": [],
+            "checkboxes": [],
+            "plainText": []
+        },
+        {
+            "id": 139881247055056,
+            "class": "Node_array",
+            "module": "Vetor2",
+            "x_pos": 167.81249999999994,
+            "y_pos": -69.6875,
+            "title": "Vetor 1D",
+            "inputs": [
+                {
+                    "id": 139881247055008,
+                    "position": "input",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881247054960,
+                    "position": "input",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881247101088,
+                    "position": "input",
+                    "color": "int",
+                    "status": true
+                }
+            ],
+            "outputs": [
+                {
+                    "id": 139881247101136,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                },
+                {
+                    "id": 139881247101184,
+                    "position": "output",
+                    "color": "float",
+                    "status": true
+                }
+            ],
+            "sender": null,
+            "entrys": [
+                {
+                    "index": 0,
+                    "valor": "0"
+                },
+                {
+                    "index": 1,
+                    "valor": "10"
+                },
+                {
+                    "index": 2,
+                    "valor": "10"
                 }
             ],
             "kwargs": {},
@@ -83,9 +289,39 @@
     ],
     "edges": [
         {
-            "id": 140673131598256,
-            "StartSocket": 140673131612576,
-            "EndSocket": 140673131610320,
+            "id": 139881258803408,
+            "StartSocket": 139881258842912,
+            "EndSocket": 139881258842624,
+            "edge_type": 2
+        },
+        {
+            "id": 139881258804400,
+            "StartSocket": 139881258843104,
+            "EndSocket": 139881258842624,
+            "edge_type": 2
+        },
+        {
+            "id": 139881258804496,
+            "StartSocket": 139881258842720,
+            "EndSocket": 139881258843296,
+            "edge_type": 2
+        },
+        {
+            "id": 139881258804592,
+            "StartSocket": 139881258843680,
+            "EndSocket": 139881258842672,
+            "edge_type": 2
+        },
+        {
+            "id": 139881258807216,
+            "StartSocket": 139881258843440,
+            "EndSocket": 139881247052896,
+            "edge_type": 2
+        },
+        {
+            "id": 139881258807184,
+            "StartSocket": 139881247101136,
+            "EndSocket": 139881247053136,
             "edge_type": 2
         }
     ],

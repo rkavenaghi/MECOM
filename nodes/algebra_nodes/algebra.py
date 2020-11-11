@@ -5,7 +5,7 @@ from core.node_socket import *
 from utils.MECWidgets import SVGLabel
 import logging
 
-
+from .somatorio_node import QDMNodeAlgebraSoma
 
 class Node_algebra(Node):
     """ Módulo contendo operadores lineares.
@@ -32,16 +32,8 @@ class Node_algebra(Node):
         self.title = method
         self.MODULO = method
         prosseguir = False
-        if method == 'Somatório':
 
-            self.content = QDMNodeAlgebraSoma(self)
-            self.grNode = QDMGraphicsNode(self)
-            self.grNode.resize(200, 120)
-            inputs = [0.35]
-            outputs = [0.75]
-
-            prosseguir = True
-        elif method == 'Convolução':
+        if method == 'Convolução':
 
             self.content = QDMNodeAlgebraConvolucao(self)
             self.grNode = QDMGraphicsNode(self)
@@ -136,64 +128,7 @@ class QDMNodeAlgebraDivisao(QWidget):
                     self.node.invalidSignal()
 
 
-class QDMNodeAlgebraSoma(QWidget):
-    def __init__(self,node,parent = None):
-        self.node = node
-        super().__init__(parent)
 
-        self.initUI()
-    def initUI(self):
-        self.layout = QVBoxLayout()
-        self.layout.setContentsMargins(0,0,0,0)
-        self.setLayout(self.layout)
-
-        label = QLabel('IN1 - Vetores')
-        label2 = QLabel('OUT2 - ')
-        hframe = QFrame()
-        hlayot = QHBoxLayout()
-        hframe.setLayout(hlayot)
-
-        svg_widget = SVGLabel()
-        svg_widget.load('x[k] = \sum_{j=0}^{N}x_j[k]',fontsize=16, color='#f0f0f0')
-        svg_widget.setFixedWidth(100)
-        svg_widget.setFixedHeight(40)
-        self.layout.addWidget(label)
-
-        hlayot.addWidget(label2)
-        hlayot.addWidget(svg_widget)
-        self.layout.addWidget(hframe)
-
-    # TODO nao funciona adequadamente para escalares. Corrigir
-    def add(self):
-        """
-        :return:
-        x = x_1 + x_2 + ... x_n
-        """
-        edgedata = []
-        for inputsocket in self.node.inputs:
-            if inputsocket.hasEdge():
-                for edge in inputsocket.edges:
-                    if not isinstance(edge.data, type(None)):
-                        edgedata.append(edge.data)
-        samelength = [len(_x)==len(edgedata[0]) for _x in edgedata]
-        if samelength:
-            # Funciona tanto para listas quanto para arrays.
-            return np.array([sum(i) for i in zip(*edgedata)])
-        else:
-            logging.warning('Elementos de tamanhos diferentes')
-            return None
-
-    def refresh(self):
-        value = self.add()
-        if not isinstance(value, type(None)):
-            for outputs in self.node.outputs:
-                for edge in outputs.edges:
-
-                    edge.signal(value, self, 'float')
-        else:
-            for outputs in self.node.outputs:
-                for edge in outputs.edges:
-                    edge.signal(None, self)
 
 
 class QDMNodeAlgebraConvolucao(QWidget):

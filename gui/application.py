@@ -207,8 +207,11 @@ class ComputationalMecEng(QMainWindow):
             Node_array(self.current_project.scene, parent=self)
         elif sent_text == 'Matrix':
             Node_matrix(self.current_project.scene, parent=self)
+        elif sent_text == 'Somatório':
+            Node_somatorio(self.current_project.scene, parent=self)
         else:
             Node_algebra(self.current_project.scene, parent=self, method=self.sender().text())
+
 
     def load_vibrations(self):
         
