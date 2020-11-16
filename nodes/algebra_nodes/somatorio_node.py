@@ -9,8 +9,8 @@ GET_ROW = 1
 GET_COLUMN = 2
 TRANSPOR = 3
 
-class Node_somatorio(Node):
 
+class Node_somatorio(Node):
 
     def __init__(self, scene, title="Soma", parent=None, method=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -26,12 +26,9 @@ class Node_somatorio(Node):
         self.scene.addNode(self)
         self.scene.grScene.addItem(self.grNode)
 
-
-
         inputs = [{'pos': 0.42, 'type': 'float', 'label': 'Soma +', 'multiple_edges': True},
                   {'pos': 0.8, 'type': 'float', 'label': 'Soma -', 'multiple_edges': True}]
         outputs = [{'pos': 0.8, 'type': 'float', 'label': 'Soma saída', 'multiple_edges': True}]
-
 
         self.configInputsOutputs(inputs, outputs)
         self.configureObjectTree()
@@ -42,7 +39,7 @@ class QDMNodeAlgebraSoma(QWidget):
         self.node = node
         super().__init__(parent)
         self.initUI()
-        
+
     def initUI(self):
         self.layout = QGridLayout()
         self.layout.setContentsMargins(0, 0, 0, 0)

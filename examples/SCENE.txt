@@ -1,137 +1,20 @@
 {
-    "id": 139714481065648,
+    "id": 140444693995280,
     "scene": false,
     "width": 64000,
     "height": 64000,
     "nodes": [
         {
-            "id": 139714481104256,
-            "class": "Node_somatorio",
-            "module": "Soma1",
-            "x_pos": 20.0,
-            "y_pos": -12.0,
-            "title": "Soma",
-            "inputs": [
-                {
-                    "id": 139881258842624,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881258842672,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "outputs": [
-                {
-                    "id": 139881258842720,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "sender": null,
-            "entrys": [],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 139714481125408,
-            "class": "Node_algebra",
-            "module": "Escalar1",
-            "x_pos": -224.0,
-            "y_pos": -97.0,
-            "title": "Escalar",
+            "id": 140444694033888,
+            "class": "Node_scalar",
+            "module": "Vari\u00e1vel1",
+            "x_pos": -274.0,
+            "y_pos": -215.0,
+            "title": "Vari\u00e1vel",
             "inputs": [],
             "outputs": [
                 {
-                    "id": 139881258842912,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "sender": "Escalar",
-            "entrys": [
-                {
-                    "index": 0,
-                    "valor": "2"
-                }
-            ],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 139714481152208,
-            "class": "Node_algebra",
-            "module": "Escalar2",
-            "x_pos": -232.0,
-            "y_pos": 31.0,
-            "title": "Escalar",
-            "inputs": [],
-            "outputs": [
-                {
-                    "id": 139881258843104,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "sender": "Escalar",
-            "entrys": [
-                {
-                    "index": 0,
-                    "valor": "3"
-                }
-            ],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 139714481152256,
-            "class": "Node_array",
-            "module": "Vetor1",
-            "x_pos": 164.28125000000028,
-            "y_pos": 201.73437499999991,
-            "title": "Vetor 1D",
-            "inputs": [
-                {
-                    "id": 139881258843296,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881258842960,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881258843344,
-                    "position": "input",
-                    "color": "int",
-                    "status": true
-                }
-            ],
-            "outputs": [
-                {
-                    "id": 139881258843440,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881258843488,
+                    "id": 139910372284448,
                     "position": "output",
                     "color": "float",
                     "status": true
@@ -141,15 +24,15 @@
             "entrys": [
                 {
                     "index": 0,
-                    "valor": "5.000"
+                    "valor": "100"
                 },
                 {
                     "index": 1,
-                    "valor": "1"
+                    "valor": "\\Omega_{hr}"
                 },
                 {
                     "index": 2,
-                    "valor": "10"
+                    "valor": "omega"
                 }
             ],
             "kwargs": {},
@@ -158,109 +41,16 @@
             "plainText": []
         },
         {
-            "id": 140012890242880,
-            "class": "Node_algebra",
-            "module": "Escalar3",
-            "x_pos": -227.0,
-            "y_pos": 160.0,
-            "title": "Escalar",
+            "id": 140358927873840,
+            "class": "Node_scalar",
+            "module": "Vari\u00e1vel2",
+            "x_pos": 193.0,
+            "y_pos": -221.0,
+            "title": "Vari\u00e1vel",
             "inputs": [],
             "outputs": [
                 {
-                    "id": 139881258843680,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "sender": "Escalar",
-            "entrys": [
-                {
-                    "index": 0,
-                    "valor": "0"
-                }
-            ],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 139881258915776,
-            "class": "Node_graphics",
-            "module": "Gr\u00e1fico1",
-            "x_pos": 621.5781250000001,
-            "y_pos": -130.015625,
-            "title": "Visualiza\u00e7\u00e3o 2D",
-            "inputs": [
-                {
-                    "id": 139881247053136,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881247052896,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881247053232,
-                    "position": "input",
-                    "color": "str",
-                    "status": true
-                }
-            ],
-            "outputs": [],
-            "sender": null,
-            "entrys": [
-                {
-                    "index": 0,
-                    "valor": ""
-                }
-            ],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 139881247055056,
-            "class": "Node_array",
-            "module": "Vetor2",
-            "x_pos": 167.81249999999994,
-            "y_pos": -69.6875,
-            "title": "Vetor 1D",
-            "inputs": [
-                {
-                    "id": 139881247055008,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881247054960,
-                    "position": "input",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881247101088,
-                    "position": "input",
-                    "color": "int",
-                    "status": true
-                }
-            ],
-            "outputs": [
-                {
-                    "id": 139881247101136,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                },
-                {
-                    "id": 139881247101184,
+                    "id": 139910372784640,
                     "position": "output",
                     "color": "float",
                     "status": true
@@ -270,15 +60,15 @@
             "entrys": [
                 {
                     "index": 0,
-                    "valor": "0"
+                    "valor": "omega*pi"
                 },
                 {
                     "index": 1,
-                    "valor": "10"
+                    "valor": "\\dot{\\Omega}_{hr}"
                 },
                 {
                     "index": 2,
-                    "valor": "10"
+                    "valor": "DOmega"
                 }
             ],
             "kwargs": {},
@@ -287,43 +77,6 @@
             "plainText": []
         }
     ],
-    "edges": [
-        {
-            "id": 139881258803408,
-            "StartSocket": 139881258842912,
-            "EndSocket": 139881258842624,
-            "edge_type": 2
-        },
-        {
-            "id": 139881258804400,
-            "StartSocket": 139881258843104,
-            "EndSocket": 139881258842624,
-            "edge_type": 2
-        },
-        {
-            "id": 139881258804496,
-            "StartSocket": 139881258842720,
-            "EndSocket": 139881258843296,
-            "edge_type": 2
-        },
-        {
-            "id": 139881258804592,
-            "StartSocket": 139881258843680,
-            "EndSocket": 139881258842672,
-            "edge_type": 2
-        },
-        {
-            "id": 139881258807216,
-            "StartSocket": 139881258843440,
-            "EndSocket": 139881247052896,
-            "edge_type": 2
-        },
-        {
-            "id": 139881258807184,
-            "StartSocket": 139881247101136,
-            "EndSocket": 139881247053136,
-            "edge_type": 2
-        }
-    ],
+    "edges": [],
     "lembretes": []
 }

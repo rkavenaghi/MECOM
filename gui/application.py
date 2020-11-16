@@ -22,6 +22,7 @@ import utils
 
 class ComputationalMecEng(QMainWindow):
     lembretes = []
+    variables = []
     database = None
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -205,6 +206,8 @@ class ComputationalMecEng(QMainWindow):
         sent_text = self.sender().text()
         if sent_text == 'Vetor':
             Node_array(self.current_project.scene, parent=self)
+        elif sent_text == 'Escalar':
+            Node_scalar(self.current_project.scene, parent=self)
         elif sent_text == 'Matrix':
             Node_matrix(self.current_project.scene, parent=self)
         elif sent_text == 'Somatório':

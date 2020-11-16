@@ -5,6 +5,7 @@ from .algebra_nodes.algebra import Node_algebra
 from .algebra_nodes.array_node import Node_array
 from .algebra_nodes.matrix_node import Node_matrix
 from .algebra_nodes.somatorio_node import Node_somatorio
+from .algebra_nodes.variable_node import Node_scalar
 
 from .timer import Node_timer
 from .complex import Node_complex

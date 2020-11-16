@@ -59,13 +59,6 @@ class Node_algebra(Node):
             outputs = [0.8]
             prosseguir = True
 
-        elif method == 'Escalar':
-            self.content = QDMNodeScalar(self)  # mando o node tambem
-            self.grNode = QDMGraphicsNode(self)
-            self.grNode.resize(140, 98)
-            inputs = []
-            outputs = [{'pos': 0.8, 'type': 'float', 'label': 'Escalar'}]
-            prosseguir = True
 
         else:
             logging.error('Não implementado ainda')
@@ -201,46 +194,6 @@ class QDMNodeAlgebraConvolucao(QWidget):
                 for edge in outputs.edges:
                     edge.signal(None, self)
 
-
-class QDMNodeScalar(QWidget):
-    def __init__(self, node, parent=None):
-        self.node = node
-        super().__init__(parent)
-        self.initUI()
-    def initUI(self):
-        self.layout = QVBoxLayout()
-        self.layout.setContentsMargins(0, 0, 0, 0)
-        self.setLayout(self.layout)
-        self.entry = QLineEdit('Digite')
-        self.output_label = QLabel(' ')
-
-
-        self.entry.textChanged.connect(self.node.updateNode)
-        self.layout.addWidget(self.entry)
-        self.layout.addWidget(self.output_label)
-        self.entrys = [self.entry]
-
-    def outputSignal(self, value):
-        ns = {'__builtins__': None, 'pi': np.pi}
-        try:
-            signal_data = (eval(value, ns))
-            return signal_data
-        except:
-
-            logging.warning('Não é uma expressão válida')
-            return None
-    def refresh(self):
-
-        value = self.entry.text()
-
-        readdata = self.outputSignal(value)
-        try:
-            self.output_label.setText(f'{readdata:.3e}')
-        except ValueError:
-            self.output_label.setText(f'---')
-
-        if (self.node.outputs[0].hasEdge()):
-            self.node.sendSignal([readdata], self.node.outputs, [self], ['float'])
 
 
 class QDMNodeAlgebraProduto(QWidget):
