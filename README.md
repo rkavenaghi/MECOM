@@ -38,6 +38,13 @@ Executando este comando, todas as dependências necessárias para rodar o projet
 
 ## Mural para desenvolvimento
 
+#### Update 11/11/2020
+
+    > Modificação da representação de Álgebra somatório para um Nó com entradas positivas e negativas. 
+        > Avaliar se comportamento para múltiplas entradas. 
+        > Avaliar para tipos de dados diferentes de escalares.
+
+
 ### Ferramentas de Análise
     > Implementar Vibrações para Sistemas com Múltiplos Graus de Liberdade;
     > Implementar Análise de Autovalores e Autovetores de Matrix em Álgebra;
