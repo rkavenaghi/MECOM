@@ -41,7 +41,7 @@ Executando este comando, todas as dependências necessárias para rodar o projet
 
 #### Update 16/11/2020
     > Modificado comportamento de Álgebra Escalar para permitir a criação de variáveis e sua manipulação algébrica através de Alias.
-
+![Demonstracao](resources/variables.png)
 #### Update 11/11/2020
 
     > Modificação da representação de Álgebra somatório para um Nó com entradas positivas e negativas. 
