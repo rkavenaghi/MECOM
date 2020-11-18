@@ -33,24 +33,26 @@ class QDMNodeScalar(QWidget):
         self.data = None
 
     def updateDisplayText(self):
-
-        self.svg_widget.load(self.display.text() + '=' + self.output_label.text(), fontsize=12, color='#f0f0f0')
-        self.svg_widget.adjustSize()
-
+        try:
+            self.svg_widget.load(self.display.text() + '=' + self.output_label.text(), fontsize=12, color='#f0f0f0')
+            self.svg_widget.adjustSize()
+        except ValueError:
+            pass
     def initUI(self):
         self.layout = QGridLayout()
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(self.layout)
-        self.entry = QLineEdit('Valor')
+        self.entry = LineEntryEdit('Valor')
 
         self.display = QLineEdit('Display')
         self.alias = QLineEdit('Alias')
         self.svg_widget = SVGLabel()
         self.svg_widget.load(self.display.text(), color='#f0f0f0')
-        self.svg_widget.setMinimumHeight(16)
 
+        self.svg_widget.adjustSize()
         self.output_label = QLabel(' ')
         self.display.textChanged.connect(self.updateDisplayText)
+
 
         self.entry.textChanged.connect(self.node.updateNode)
 
@@ -67,34 +69,10 @@ class QDMNodeScalar(QWidget):
         self.entrys = [self.entry, self.display, self.alias]
         self.node.parent.variables.append(self.node)
 
-    def outputSignal(self, value):
-
-        ns = {'__builtins__': None, 'pi': np.pi, 'e': np.e}
-        # Verificar todos os nós em scene que são do tipo Node_variable
-
-        for variable in self.node.parent.variables:
-            ns.update({variable.content.alias.text(): variable.content.data})
-
-        print(ns)
-
-
-        #if self.node.inputs[0].hasSignal():
-        #    for cont, edge in enumerate(self.node.inputs[0].edges):
-        #        ns.update({f'IN{cont}': edge.data})
-
-
-        try:
-            signal_data = (eval(value, ns))
-            return signal_data
-        except TypeError:
-            logging.warning('Não é uma expressão válida')
-            return None
-
     def refresh(self):
 
         value = self.entry.text()
-
-        readdata = self.outputSignal(value)
+        readdata = self.entry.evaluate(value)
         try:
             self.output_label.setText(f'{readdata:.3e}')
         except ValueError:

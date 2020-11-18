@@ -1,6 +1,6 @@
 from core.node_edge import *
 from core.node_socket import *
-from utils.MECWidgets import SVGLabel
+from utils.MECWidgets import SVGLabel, LineEntryEdit
 from core.updateLogic import graphUpdateLogic
 
 from PyQt5.QtGui import *

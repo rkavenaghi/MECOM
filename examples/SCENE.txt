@@ -1,20 +1,20 @@
 {
-    "id": 140039959723792,
+    "id": 140641859022608,
     "scene": false,
     "width": 64000,
     "height": 64000,
     "nodes": [
         {
-            "id": 140039959762400,
+            "id": 140641859057120,
             "class": "Node_scalar",
             "module": "Vari\u00e1vel1",
-            "x_pos": -173.0,
-            "y_pos": -197.0,
+            "x_pos": -321.0,
+            "y_pos": -163.0,
             "title": "Vari\u00e1vel",
             "inputs": [],
             "outputs": [
                 {
-                    "id": 140039694010064,
+                    "id": 140641522693840,
                     "position": "output",
                     "color": "float",
                     "status": true
@@ -24,87 +24,15 @@
             "entrys": [
                 {
                     "index": 0,
-                    "valor": "500"
+                    "valor": "5"
                 },
                 {
                     "index": 1,
-                    "valor": "\\Omega_{rh}"
+                    "valor": "\\Omega_{hr}"
                 },
                 {
                     "index": 2,
-                    "valor": "rotor_av"
-                }
-            ],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 140039693344880,
-            "class": "Node_scalar",
-            "module": "Vari\u00e1vel3",
-            "x_pos": -179.0,
-            "y_pos": 24.0,
-            "title": "Vari\u00e1vel",
-            "inputs": [],
-            "outputs": [
-                {
-                    "id": 140039693028704,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "sender": null,
-            "entrys": [
-                {
-                    "index": 0,
-                    "valor": "0.5"
-                },
-                {
-                    "index": 1,
-                    "valor": "r"
-                },
-                {
-                    "index": 2,
-                    "valor": "rotor_r"
-                }
-            ],
-            "kwargs": {},
-            "args": [],
-            "checkboxes": [],
-            "plainText": []
-        },
-        {
-            "id": 140039691958928,
-            "class": "Node_scalar",
-            "module": "Vari\u00e1vel4",
-            "x_pos": 187.0,
-            "y_pos": -79.0,
-            "title": "Vari\u00e1vel",
-            "inputs": [],
-            "outputs": [
-                {
-                    "id": 140039692032032,
-                    "position": "output",
-                    "color": "float",
-                    "status": true
-                }
-            ],
-            "sender": null,
-            "entrys": [
-                {
-                    "index": 0,
-                    "valor": "rotor_av*rotor_r"
-                },
-                {
-                    "index": 1,
-                    "valor": "t_v"
-                },
-                {
-                    "index": 2,
-                    "valor": "tip_velocity"
+                    "valor": "velocidade_angular"
                 }
             ],
             "kwargs": {},

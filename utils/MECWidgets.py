@@ -1,7 +1,9 @@
 from PyQt5.QtSvg import QSvgWidget
 import matplotlib.pyplot as plt
 from io import BytesIO
-
+from PyQt5.QtWidgets import QLineEdit
+import numpy as np
+import logging
 
 def tex2svg(formula, fontsize=12, dpi=300, color='#a0a0a0', figsize=(0.01, 0.01), getsvgfig=False):
     fig = plt.figure(figsize=figsize)
@@ -51,6 +53,28 @@ class SVGLabel(QSvgWidget):
         if not isinstance(size, type(None)):
             self.setFixedSize(*size)
         return self
+
+
+class LineEntryEdit(QLineEdit):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def variables(self):
+        ns = {'__builtins__': None, 'pi': np.pi, 'e': np.e}
+        for variable in self.parent().node.parent.variables:
+            ns.update({variable.content.alias.text(): variable.content.data})
+        return ns
+
+    def evaluate(self, value):
+        ns = self.variables()
+        try:
+            signal_data = (eval(value, ns))
+            return signal_data
+        except TypeError:
+            logging.warning('Não é expressão válida')
+            return None
+
 
 if __name__ == '__main__':
     # Usar para auxiliar a escrita de formulas em SVG para a documentacao

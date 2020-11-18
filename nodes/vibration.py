@@ -19,10 +19,10 @@ class Node_vibration(Node):
         if self.method == 'SDOF':
             self.content = QDMNodeSDOF(self)
             self.grNode = QDMGraphicsNode(self)
-            self.grNode.resize(300, 350)
+            self.grNode.resize(300, 300)
 
-            inputs = [0.25, 0.38, 0.51, 0.65, 0.77]
-            outputs = [0.87, {'pos':.94, 'type': 'complex'}] # Saida de h(t)
+            inputs = [0.22, 0.38, 0.56, 0.71, 0.86]
+            outputs = [0.71, {'pos': .86, 'type': 'complex'}]
         
         self.scene.addNode(self)
         self.scene.grScene.addItem(self.grNode)
@@ -36,50 +36,25 @@ class QDMNodeSDOF(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.layout = QVBoxLayout()
-        self.layout.setContentsMargins(0,0,0,0)
+        self.layout = QGridLayout()
+        self.layout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(self.layout)
-        # Massa 
-        f1 = QFrame()
-        l1 = SVGLabel().load('m - [kg]')
-        l1.setMaximumHeight(20)
-        e1 = QLineEdit()
-        layout1 = QHBoxLayout()
-        f1.setLayout(layout1)
-        layout1.addWidget(l1)
-        layout1.addWidget(e1)
-        # Rigidez 
-        f2 = QFrame()
-        l2 = SVGLabel().load('k - [N/m]')
-        l2.setMaximumHeight(20)
-        e2 = QLineEdit()
-        layout2 = QHBoxLayout()
-        f2.setLayout(layout2)
-        layout2.addWidget(l2)
-        layout2.addWidget(e2)
-        # Amortecimento
-        f3 = QFrame()
-        l3 = SVGLabel().load('c - [N.s/m]')
-        l3.setMaximumHeight(20)
-        e3 = QLineEdit()
-        layout3 = QHBoxLayout()
-        f3.setLayout(layout3)
-        layout3.addWidget(l3)
-        layout3.addWidget(e3)
-        f4 = QFrame()
-        l4 = QLabel('IN4 - Vetor t')
-        l5 = QLabel('IN5 - Vetor omega')
 
-        layout4 = QHBoxLayout()
-        
-        layout4.addWidget(l4)
-        
-        f4.setLayout(layout4)
-        
-        layout5 = QHBoxLayout()
-        layout5.addWidget(l5)
-        f5 = QFrame()
-        f5.setLayout(layout5)
+
+        e1 = QLineEdit()
+        e2 = QLineEdit()
+        e3 = QLineEdit()
+
+        self.layout.addWidget(SVGLabel().load('m - [kg]'), 0, 0)
+        self.layout.addWidget(e1, 0, 1)
+
+        self.layout.addWidget(SVGLabel().load('k - [N/m]'), 1, 0)
+        self.layout.addWidget(e2, 1, 1)
+
+        self.layout.addWidget(SVGLabel().load('c - [N.s/m]'), 2, 0)
+        self.layout.addWidget(e3, 2, 1)
+
+
 
         self.entrys = [e1, e2, e3]
         for entry in self.entrys:
@@ -87,19 +62,15 @@ class QDMNodeSDOF(QWidget):
             entry.textEdited.connect(self.node.updateNode)
 
 
-        self.layout.addWidget(QLabel('Sistema Mecânico de 1 GDL'))
-        for frame in [f1, f2, f3, f4, f5]:
-            self.layout.addWidget(frame)
-
         out1 = SVGLabel()
         out1.load('h(t)')
         out1.setFixedSize(30, 20)
-        self.layout.addWidget(out1)
+        self.layout.addWidget(out1, 3, 0)
 
         out2 = SVGLabel()
         out2.load('H(f)')
         out2.setFixedSize(30, 20)
-        self.layout.addWidget(out2)
+        self.layout.addWidget(out2, 4, 0)
 
     def haveEntrys(self):    
         e1, e2, e3 = self.entrys

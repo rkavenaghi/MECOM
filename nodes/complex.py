@@ -26,7 +26,7 @@ class Node_complex(Node):
         
         self.content = QDMNodeComplex(self) #mando o node tambem
         self.grNode = QDMGraphicsNode(self)
-        self.grNode.resize(200, 200)
+        self.grNode.resize(160, 160)
 
         
         self.scene.addNode(self)
@@ -57,11 +57,14 @@ class QDMNodeComplex(QWidget):
         self.layout = QVBoxLayout()
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(self.layout)
-        self.layout.addWidget(QLabel('IN1: x'))
-        self.layout.addWidget(QLabel('OUT1: Re(x)'))
-        self.layout.addWidget(QLabel('OUT2: Im(x)'))
-        self.layout.addWidget(QLabel('OUT3: Abs(x)'))
-        self.layout.addWidget(QLabel('OUT4: Fase(x)'))
+
+
+        for label in ['x', '\Re(x)', '\Im(x)', '|x|', '\\angle (x)']:
+            svg = SVGLabel()
+            svg.load(label, fontsize=12)
+
+            svg.setFixedSize(30, 20)
+            self.layout.addWidget(svg)
 
     def refresh(self):
         if self.node.inputs[0].hasEdge():
